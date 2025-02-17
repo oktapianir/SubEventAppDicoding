@@ -1,0 +1,10 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SubEventAppDicoding" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="android:textColorPrimary">@color/white</item> <!-- Teks utama berwarna putih -->
+        <item name="android:textColorSecondary">@color/light_gray</item> <!-- Teks sekunder berwarna abu-abu terang -->
+        <item name="colorPrimary">@color/primary_dark_color</item>
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+</resources>

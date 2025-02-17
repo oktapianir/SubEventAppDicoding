@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SubEventAppDicoding</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="back">Back</string>
+    <string name="register_now">Register Now</string>
+    <string name="past_events">Past Events</string>
+    <string name="active_events">Active Events</string>
+    <string name="nav_past">Past Events</string>
+    <string name="title">By Decoding Indonesia</string>
+    <string name="titleapp">DICODING EVENT</string>
+    <string name="titlemenu">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="setting">Setting</string>
+    <string name="dark_mode">Dark Mode</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="empty_favorite">No favorites available</string>
+    <string name="img_event">Event Image</string>
+    <string name="daily_reminder">Daily Reminder</string>
+    <string name="daily_reminder_desc">Reminder New Event</string>
+</resources>

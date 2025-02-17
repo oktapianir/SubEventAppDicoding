@@ -1,0 +1,87 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- Home Fragment -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.okta.subeventappdicoding.fragment.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_activeEventsFragment"
+            app:destination="@id/activeEventsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pastEventsFragment"
+            app:destination="@id/pastEventsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+
+    </fragment>
+
+    <!-- Active Events Fragment -->
+    <fragment
+        android:id="@+id/activeEventsFragment"
+        android:name="com.okta.subeventappdicoding.fragment.ActiveEventsFragment"
+        android:label="Active Events"
+        tools:layout="@layout/fragment_active_events">
+        <action
+            android:id="@+id/action_activeEventsFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
+        <action
+            android:id="@+id/action_activeEventsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <!-- Past Events Fragment -->
+    <fragment
+        android:id="@+id/pastEventsFragment"
+        android:name="com.okta.subeventappdicoding.fragment.PastEventsFragment"
+        android:label="Past Events"
+        tools:layout="@layout/fragment_past_event">
+        <action
+            android:id="@+id/action_pastEventsFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_pastEventsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <!-- Event Detail Fragment -->
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="com.okta.subeventappdicoding.fragment.DetailEventFragment"
+        android:label="Detail Event"
+        tools:layout="@layout/fragment_detail_event">
+        <argument
+            android:name="event"
+            app:argType="com.okta.subeventappdicoding.model.Event" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.okta.subeventappdicoding.fragment.FavoriteFragment"
+        android:label="Favorites">
+        <action
+            android:id="@+id/action_favoriteFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.okta.subeventappdicoding.fragment.SettingFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_setting" />
+</navigation>
