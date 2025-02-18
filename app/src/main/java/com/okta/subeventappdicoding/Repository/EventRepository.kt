@@ -3,7 +3,7 @@
     import android.util.Log
     import com.okta.subeventappdicoding.API.EventApi
     import com.okta.subeventappdicoding.API.EventResponse
-    import com.okta.subeventappdicoding.FavoriteEventDao
+    import com.okta.subeventappdicoding.API.FavoriteEventDao
     import com.okta.subeventappdicoding.model.Event
     import com.okta.subeventappdicoding.model.FavoriteEvent
     import kotlinx.coroutines.flow.first

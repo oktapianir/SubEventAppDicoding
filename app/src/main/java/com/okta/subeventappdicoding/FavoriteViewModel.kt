@@ -6,14 +6,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.okta.subeventappdicoding.EventDatabase
-import com.okta.subeventappdicoding.FavoriteEventDao
+import com.okta.subeventappdicoding.API.FavoriteEventDao
 import com.okta.subeventappdicoding.model.Event
 import com.okta.subeventappdicoding.model.FavoriteEvent
 import kotlinx.coroutines.launch
 
 class FavoriteViewModel(application: Application) : AndroidViewModel(application) {
     private val favoriteEventDao: FavoriteEventDao
-    val favoriteEvents: LiveData<List<FavoriteEvent>>
+    private val favoriteEvents: LiveData<List<FavoriteEvent>>
 
     init {
         val database = EventDatabase.getDatabase(application)

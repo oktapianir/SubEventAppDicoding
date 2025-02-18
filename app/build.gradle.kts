@@ -62,6 +62,8 @@ dependencies {
     implementation (libs.glide)
 
     //Viewmodel and livedata
+    implementation (libs.kotlinx.coroutines.android.v171)
+    implementation (libs.kotlinx.coroutines.core)
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
     implementation (libs.androidx.lifecycle.livedata.ktx)
 

@@ -1,4 +1,4 @@
-package com.okta.subeventappdicoding
+package com.okta.subeventappdicoding.API
 
 import androidx.room.*
 import com.okta.subeventappdicoding.model.FavoriteEvent

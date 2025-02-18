@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.okta.subeventappdicoding.API.FavoriteEventDao
 import com.okta.subeventappdicoding.model.FavoriteEvent
 
 @Database(entities = [FavoriteEvent::class], version = 1, exportSchema = false)
