@@ -57,9 +57,9 @@ abstract class BaseEventFragment : Fragment() {
         setHasOptionsMenu(true)
 
         val database = EventDatabase.getDatabase(requireContext())
-        val FavoriteEventDao = database.favoriteEventDao()
+        val favoriteEventDao = database.favoriteEventDao()
 
-        val repository = EventRepository(RetrofitClient.api, FavoriteEventDao)
+        val repository = EventRepository(RetrofitClient.api, favoriteEventDao)
         val factory = EventViewModelFactory(repository)
         viewModel = ViewModelProvider(this, factory)[EventViewModel::class.java]
 

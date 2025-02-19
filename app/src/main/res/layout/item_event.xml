@@ -56,6 +56,8 @@
                 android:drawablePadding="4dp"
                 android:textSize="12sp"
                 app:drawableStartCompat="@drawable/ic_event"
+                app:drawableTint="?android:attr/textColorPrimary"
+                android:textColor="?android:attr/textColorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_event_name"

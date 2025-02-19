@@ -1,4 +1,4 @@
-package com.okta.subeventappdicoding.ui.favorite
+package com.okta.subeventappdicoding
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

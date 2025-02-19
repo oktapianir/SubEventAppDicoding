@@ -20,7 +20,7 @@
             android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@android:color/black" />
+            app:tint="?android:attr/textColorPrimary"  />
 
         <!-- Event Cover Image -->
         <ImageView
@@ -107,7 +107,7 @@
                             android:layout_height="24dp"
                             android:importantForAccessibility="no"
                             android:src="@android:drawable/ic_menu_my_calendar"
-                            app:tint="@android:color/darker_gray" />
+                            app:tint="?android:attr/textColorSecondary" />
 
                         <TextView
                             android:id="@+id/tv_event_date"
@@ -219,7 +219,7 @@
                 android:src="@drawable/ic_favorite"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="@android:color/black" />
+                app:tint="?android:attr/textColorPrimary"  />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -85,19 +85,6 @@
 //    }
 //}
 
-package com.okta.subeventappdicoding.fragment
-
-import android.content.Context
-import android.content.SharedPreferences
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
-import com.okta.subeventappdicoding.R
-import com.okta.subeventappdicoding.databinding.FragmentSettingBinding
 
 //
 //import android.content.Context
@@ -224,6 +211,21 @@ import com.okta.subeventappdicoding.databinding.FragmentSettingBinding
 //}
 //
 
+package com.okta.subeventappdicoding.fragment
+
+import android.content.Context
+import android.content.SharedPreferences
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import com.okta.subeventappdicoding.R
+import com.okta.subeventappdicoding.databinding.FragmentSettingBinding
 
 class SettingFragment : Fragment() {
     private var _binding: FragmentSettingBinding? = null
@@ -270,6 +272,32 @@ class SettingFragment : Fragment() {
         }
     }
 
+//    private fun applyTheme(isDarkMode: Boolean) {
+//        AppCompatDelegate.setDefaultNightMode(
+//            if (isDarkMode) AppCompatDelegate.MODE_NIGHT_YES
+//            else AppCompatDelegate.MODE_NIGHT_NO
+//        )
+//
+//        // Update UI elements based on theme
+//        val textColor = ContextCompat.getColor(
+//            requireContext(),
+//            if (isDarkMode) R.color.white else R.color.black
+//        )
+//        binding.switchTheme.setTextColor(textColor)
+//
+//            val backgroundColorRes = if (isDarkMode) R.color.cardview_dark_background else R.color.cardview_light_background
+//            val backgroundColor = ContextCompat.getColor(requireContext(), backgroundColorRes)
+//
+//            // Update CardView background
+//            binding.settingsCardView.setCardBackgroundColor(backgroundColor)
+//
+//            // Update LinearLayout inside CardView
+//            (binding.settingsCardView.getChildAt(0) as? LinearLayout)?.setBackgroundColor(backgroundColor)
+//
+//            // Update TextView colors inside settingsCardView
+//            updateTextViewColors(binding.settingsCardView, textColor)
+//    }
+
     private fun applyTheme(isDarkMode: Boolean) {
         AppCompatDelegate.setDefaultNightMode(
             if (isDarkMode) AppCompatDelegate.MODE_NIGHT_YES
@@ -282,6 +310,38 @@ class SettingFragment : Fragment() {
             if (isDarkMode) R.color.white else R.color.black
         )
         binding.switchTheme.setTextColor(textColor)
+
+        // Gunakan androidx.cardview.R.color untuk warna background
+        val backgroundColorRes = if (isDarkMode)
+            androidx.cardview.R.color.cardview_dark_background
+        else
+            androidx.cardview.R.color.cardview_light_background
+
+        val backgroundColor = ContextCompat.getColor(requireContext(), backgroundColorRes)
+
+        // Update CardView background
+        binding.settingsCardView.setCardBackgroundColor(backgroundColor)
+
+        // Update LinearLayout inside CardView
+        (binding.settingsCardView.getChildAt(0) as? LinearLayout)?.setBackgroundColor(backgroundColor)
+
+        // Update TextView colors inside settingsCardView
+        updateTextViewColors(binding.settingsCardView, textColor)
+    }
+
+    private fun updateTextViewColors(view: View, textColor: Int) {
+        when (view) {
+            is ViewGroup -> {
+                for (i in 0 until view.childCount) {
+                    updateTextViewColors(view.getChildAt(i), textColor)
+                }
+            }
+            is TextView -> {
+                if (view.id != R.id.daily_reminder_desc) {
+                    view.setTextColor(textColor)
+                }
+            }
+        }
     }
 
     override fun onDestroyView() {
